@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #111;
+}
+
+.list-to-do {
+  position: relative;
+  background-color: #fff;
+  width: 350px;
+  border-radius: 15px;
+  &__title {
+    border-radius: 15px 15px 0 0;
+    height: 75px;
+    background-color: #03a9f4;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+  }
+  &__list {
+    position: relative;
+    padding: 5px 20px;
+  }
+  &__item {
+    position: relative;
+    list-style: none;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &__label {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  &__input {
+    visibility: hidden;
+    appearance: none;
+    &:checked~p {
+      text-decoration: line-through;
+      color: #ccc;
+    }
+    &:checked~span {
+      background-color: #03a9f4;
+      border: 1px solid #03a9f4;
+    }
+    &:checked~span::before {
+      content: '';
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+    }
+  }
+  &__text {
+    position: absolute;
+  }
+  &__check {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      width: 10px;
+      height: 4px;
+      border-left: 2px solid #ccc;
+      border-bottom: 2px solid #ccc;
+      transform: rotate(-40deg);
+    }
+  }
+}
